@@ -30,22 +30,6 @@ else:
     creds = service_account.Credentials.from_service_account_info(CREDENTIALS_PATH, scopes=SCOPES)
 
 if excel_file:
-    ARQUIVO_ORIGEM = excel_file
-    ABA1 = 'Worksheet'
-    ABA2 = 'Worksheet2'
-
-    COLUNAS_ESPERADAS = [
-        'Redação ID', 'Nome do Prompt', 'Prompt', 'Texto da Redação', 'Tema', 
-        'Competência 1 - IA', 'Competência 1 - Humano', 'Divergencia Competência 1', 'Modulo Divergencia Competência 1',
-        'Competência 2 - IA', 'Competência 2 - humano', 'Divergencia Competência 2', 'Modulo Divergencia Competência 2',
-        'Competência 3 - IA', 'Competência 3 - Humano', 'Divergencia Competência 3', 'Modulo Divergencia Competência 3',
-        'Competência 4 - IA', 'Competência 4 - Humano', 'Divergencia Competência 4', 'Modulo Divergencia Competência 4',
-        'Competência 5 - IA', 'Competência 5 - Humano', 'Divergencia Competência 5', 'Modulo Divergencia Competência 5',
-        'Nota - IA', 'Nota - Humano', 'Divergencia Nota', 'Modulo Divergencia Nota',
-        'Feedback Competência 1', 'Feedback Competência 2', 'Feedback Competência 3', 'Feedback Competência 4',
-        'Feedback Competência 5', 'Feedback Geral'
-    ]
-
     with st.spinner("🔄 Lendo dados do Excel..."):
         df_combinado = load_excel_data(excel_file)
 
