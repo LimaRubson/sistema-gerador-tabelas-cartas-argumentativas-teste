@@ -25,7 +25,6 @@ CREDENTIALS_PATH = "credentials.json"
 if os.path.exists(CREDENTIALS_PATH):
     creds = service_account.Credentials.from_service_account_file(CREDENTIALS_PATH, scopes=SCOPES)
 else:
-    st.warning("⚠️ O arquivo 'credentials.json' não foi encontrado. Utilizando as credenciais do secrets.")
     CREDENTIALS_PATH = st.secrets["GOOGLE_SERVICE_ACCOUNT"]
     creds = service_account.Credentials.from_service_account_info(CREDENTIALS_PATH, scopes=SCOPES)
 
